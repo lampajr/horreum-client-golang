@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // ConfigDatastoreIdItemRequestBuilder builds and executes requests for operations under \api\config\datastore\{id-id}
@@ -51,19 +51,19 @@ func (m *ConfigDatastoreIdItemRequestBuilder) Delete(ctx context.Context, reques
 }
 // Get obtain list of configured datastores for particular team
 // returns a []Datastoreable when successful
-func (m *ConfigDatastoreIdItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigDatastoreIdItemRequestBuilderGetRequestConfiguration)([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, error) {
+func (m *ConfigDatastoreIdItemRequestBuilder) Get(ctx context.Context, requestConfiguration *ConfigDatastoreIdItemRequestBuilderGetRequestConfiguration)([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateDatastoreFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateDatastoreFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, len(res))
+    val := make([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable)
+            val[i] = v.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable)
         }
     }
     return val, nil

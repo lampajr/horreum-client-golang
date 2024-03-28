@@ -4,7 +4,7 @@ import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // ExperimentItemProfilesRequestBuilder builds and executes requests for operations under \api\experiment\{testId}\profiles
@@ -25,7 +25,7 @@ type ExperimentItemProfilesRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByProfileId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.experiment.item.profiles.item collection
+// ByProfileId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.experiment.item.profiles.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *ExperimentItemProfilesWithProfileItemRequestBuilder when successful
 func (m *ExperimentItemProfilesRequestBuilder) ByProfileId(profileId string)(*ExperimentItemProfilesWithProfileItemRequestBuilder) {
@@ -38,7 +38,7 @@ func (m *ExperimentItemProfilesRequestBuilder) ByProfileId(profileId string)(*Ex
     }
     return NewExperimentItemProfilesWithProfileItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByProfileIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.experiment.item.profiles.item collection
+// ByProfileIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.experiment.item.profiles.item collection
 // returns a *ExperimentItemProfilesWithProfileItemRequestBuilder when successful
 func (m *ExperimentItemProfilesRequestBuilder) ByProfileIdInteger(profileId int32)(*ExperimentItemProfilesWithProfileItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -63,26 +63,26 @@ func NewExperimentItemProfilesRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Get retrieve Experiment Profiles by Test ID
 // returns a []ExperimentProfileable when successful
-func (m *ExperimentItemProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExperimentItemProfilesRequestBuilderGetRequestConfiguration)([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExperimentProfileable, error) {
+func (m *ExperimentItemProfilesRequestBuilder) Get(ctx context.Context, requestConfiguration *ExperimentItemProfilesRequestBuilderGetRequestConfiguration)([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExperimentProfileable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateExperimentProfileFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateExperimentProfileFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExperimentProfileable, len(res))
+    val := make([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExperimentProfileable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExperimentProfileable)
+            val[i] = v.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExperimentProfileable)
         }
     }
     return val, nil
 }
 // Post save new or update existing Experiment Profiles for a Test 
 // returns a *int32 when successful
-func (m *ExperimentItemProfilesRequestBuilder) Post(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExperimentProfileable, requestConfiguration *ExperimentItemProfilesRequestBuilderPostRequestConfiguration)(*int32, error) {
+func (m *ExperimentItemProfilesRequestBuilder) Post(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExperimentProfileable, requestConfiguration *ExperimentItemProfilesRequestBuilderPostRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,7 +109,7 @@ func (m *ExperimentItemProfilesRequestBuilder) ToGetRequestInformation(ctx conte
 }
 // ToPostRequestInformation save new or update existing Experiment Profiles for a Test 
 // returns a *RequestInformation when successful
-func (m *ExperimentItemProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExperimentProfileable, requestConfiguration *ExperimentItemProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ExperimentItemProfilesRequestBuilder) ToPostRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExperimentProfileable, requestConfiguration *ExperimentItemProfilesRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

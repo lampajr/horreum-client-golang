@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // DatasetListWithTestItemRequestBuilder builds and executes requests for operations under \api\dataset\list\{testId}
@@ -16,7 +16,7 @@ type DatasetListWithTestItemRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use DirectionAsSortDirection instead
     Direction *string `uriparametername:"direction"`
     // Sort direction
-    DirectionAsSortDirection *i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.SortDirection `uriparametername:"direction"`
+    DirectionAsSortDirection *i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.SortDirection `uriparametername:"direction"`
     // JOSN Filter expression to apply to query
     Filter *string `uriparametername:"filter"`
     // limit the number of results
@@ -52,19 +52,19 @@ func NewDatasetListWithTestItemRequestBuilder(rawUrl string, requestAdapter i2ae
 }
 // Get retrieve a paginated list of Datasets, with total count, by Test
 // returns a DatasetListable when successful
-func (m *DatasetListWithTestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DatasetListWithTestItemRequestBuilderGetRequestConfiguration)(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.DatasetListable, error) {
+func (m *DatasetListWithTestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *DatasetListWithTestItemRequestBuilderGetRequestConfiguration)(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.DatasetListable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateDatasetListFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateDatasetListFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.DatasetListable), nil
+    return res.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.DatasetListable), nil
 }
 // ToGetRequestInformation retrieve a paginated list of Datasets, with total count, by Test
 // returns a *RequestInformation when successful

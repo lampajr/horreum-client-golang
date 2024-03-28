@@ -6,7 +6,7 @@ import (
 	"net/url"
 
 	gocloak "github.com/Nerzal/gocloak/v13"
-	"github.com/hyperfoil/horreum/pkg/raw_client/models"
+	"github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 	"github.com/microsoft/kiota-abstractions-go/authentication"
 )
 

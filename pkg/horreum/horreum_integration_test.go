@@ -8,8 +8,8 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/hyperfoil/horreum/pkg/raw_client/api"
-	"github.com/hyperfoil/horreum/pkg/raw_client/models"
+	"github.com/hyperfoil/horreum-client-golang/pkg/raw_client/api"
+	"github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 	abstractions "github.com/microsoft/kiota-abstractions-go"
 	"github.com/stretchr/testify/assert"
 )

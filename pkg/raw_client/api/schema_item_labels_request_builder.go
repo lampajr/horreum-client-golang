@@ -4,7 +4,7 @@ import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // SchemaItemLabelsRequestBuilder builds and executes requests for operations under \api\schema\{id-id}\labels
@@ -25,7 +25,7 @@ type SchemaItemLabelsRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByLabelId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.schema.item.labels.item collection
+// ByLabelId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.schema.item.labels.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *SchemaItemLabelsWithLabelItemRequestBuilder when successful
 func (m *SchemaItemLabelsRequestBuilder) ByLabelId(labelId string)(*SchemaItemLabelsWithLabelItemRequestBuilder) {
@@ -38,7 +38,7 @@ func (m *SchemaItemLabelsRequestBuilder) ByLabelId(labelId string)(*SchemaItemLa
     }
     return NewSchemaItemLabelsWithLabelItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByLabelIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.schema.item.labels.item collection
+// ByLabelIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.schema.item.labels.item collection
 // returns a *SchemaItemLabelsWithLabelItemRequestBuilder when successful
 func (m *SchemaItemLabelsRequestBuilder) ByLabelIdInteger(labelId int32)(*SchemaItemLabelsWithLabelItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -63,26 +63,26 @@ func NewSchemaItemLabelsRequestBuilder(rawUrl string, requestAdapter i2ae4187f7d
 }
 // Get retrieve list of Labels for a Schema by Schema ID
 // returns a []Labelable when successful
-func (m *SchemaItemLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaItemLabelsRequestBuilderGetRequestConfiguration)([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Labelable, error) {
+func (m *SchemaItemLabelsRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaItemLabelsRequestBuilderGetRequestConfiguration)([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Labelable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateLabelFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateLabelFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Labelable, len(res))
+    val := make([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Labelable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Labelable)
+            val[i] = v.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Labelable)
         }
     }
     return val, nil
 }
 // Post save new or update existing Label for a Schema
 // returns a *int32 when successful
-func (m *SchemaItemLabelsRequestBuilder) Post(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Labelable, requestConfiguration *SchemaItemLabelsRequestBuilderPostRequestConfiguration)(*int32, error) {
+func (m *SchemaItemLabelsRequestBuilder) Post(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Labelable, requestConfiguration *SchemaItemLabelsRequestBuilderPostRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,7 +109,7 @@ func (m *SchemaItemLabelsRequestBuilder) ToGetRequestInformation(ctx context.Con
 }
 // ToPostRequestInformation save new or update existing Label for a Schema
 // returns a *RequestInformation when successful
-func (m *SchemaItemLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Labelable, requestConfiguration *SchemaItemLabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SchemaItemLabelsRequestBuilder) ToPostRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Labelable, requestConfiguration *SchemaItemLabelsRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

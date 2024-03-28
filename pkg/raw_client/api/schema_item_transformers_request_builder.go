@@ -4,7 +4,7 @@ import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // SchemaItemTransformersRequestBuilder builds and executes requests for operations under \api\schema\{id-id}\transformers
@@ -25,7 +25,7 @@ type SchemaItemTransformersRequestBuilderPostRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByTransformerId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.schema.item.transformers.item collection
+// ByTransformerId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.schema.item.transformers.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *SchemaItemTransformersWithTransformerItemRequestBuilder when successful
 func (m *SchemaItemTransformersRequestBuilder) ByTransformerId(transformerId string)(*SchemaItemTransformersWithTransformerItemRequestBuilder) {
@@ -38,7 +38,7 @@ func (m *SchemaItemTransformersRequestBuilder) ByTransformerId(transformerId str
     }
     return NewSchemaItemTransformersWithTransformerItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByTransformerIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.schema.item.transformers.item collection
+// ByTransformerIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.schema.item.transformers.item collection
 // returns a *SchemaItemTransformersWithTransformerItemRequestBuilder when successful
 func (m *SchemaItemTransformersRequestBuilder) ByTransformerIdInteger(transformerId int32)(*SchemaItemTransformersWithTransformerItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -63,26 +63,26 @@ func NewSchemaItemTransformersRequestBuilder(rawUrl string, requestAdapter i2ae4
 }
 // Get list all Transformers defined for a Schema
 // returns a []Transformerable when successful
-func (m *SchemaItemTransformersRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaItemTransformersRequestBuilderGetRequestConfiguration)([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Transformerable, error) {
+func (m *SchemaItemTransformersRequestBuilder) Get(ctx context.Context, requestConfiguration *SchemaItemTransformersRequestBuilderGetRequestConfiguration)([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Transformerable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateTransformerFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateTransformerFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Transformerable, len(res))
+    val := make([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Transformerable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Transformerable)
+            val[i] = v.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Transformerable)
         }
     }
     return val, nil
 }
 // Post save new or update existing Transformer defintion
 // returns a *int32 when successful
-func (m *SchemaItemTransformersRequestBuilder) Post(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Transformerable, requestConfiguration *SchemaItemTransformersRequestBuilderPostRequestConfiguration)(*int32, error) {
+func (m *SchemaItemTransformersRequestBuilder) Post(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Transformerable, requestConfiguration *SchemaItemTransformersRequestBuilderPostRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -109,7 +109,7 @@ func (m *SchemaItemTransformersRequestBuilder) ToGetRequestInformation(ctx conte
 }
 // ToPostRequestInformation save new or update existing Transformer defintion
 // returns a *RequestInformation when successful
-func (m *SchemaItemTransformersRequestBuilder) ToPostRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Transformerable, requestConfiguration *SchemaItemTransformersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *SchemaItemTransformersRequestBuilder) ToPostRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Transformerable, requestConfiguration *SchemaItemTransformersRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

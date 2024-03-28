@@ -14,7 +14,7 @@ type RunRequestBuilder struct {
 func (m *RunRequestBuilder) Autocomplete()(*RunAutocompleteRequestBuilder) {
     return NewRunAutocompleteRequestBuilderInternal(m.BaseRequestBuilder.PathParameters, m.BaseRequestBuilder.RequestAdapter)
 }
-// ById gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.run.item collection
+// ById gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.run.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *RunRunItemRequestBuilder when successful
 func (m *RunRequestBuilder) ById(id string)(*RunRunItemRequestBuilder) {
@@ -27,7 +27,7 @@ func (m *RunRequestBuilder) ById(id string)(*RunRunItemRequestBuilder) {
     }
     return NewRunRunItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.run.item collection
+// ByIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.run.item collection
 // returns a *RunRunItemRequestBuilder when successful
 func (m *RunRequestBuilder) ByIdInteger(id int32)(*RunRunItemRequestBuilder) {
     urlTplParams := make(map[string]string)

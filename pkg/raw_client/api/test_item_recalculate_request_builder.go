@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // TestItemRecalculateRequestBuilder builds and executes requests for operations under \api\test\{id}\recalculate
@@ -39,19 +39,19 @@ func NewTestItemRecalculateRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Get get recalculation status for Test
 // returns a RecalculationStatusable when successful
-func (m *TestItemRecalculateRequestBuilder) Get(ctx context.Context, requestConfiguration *TestItemRecalculateRequestBuilderGetRequestConfiguration)(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RecalculationStatusable, error) {
+func (m *TestItemRecalculateRequestBuilder) Get(ctx context.Context, requestConfiguration *TestItemRecalculateRequestBuilderGetRequestConfiguration)(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RecalculationStatusable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateRecalculationStatusFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateRecalculationStatusFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RecalculationStatusable), nil
+    return res.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RecalculationStatusable), nil
 }
 // Post recalculate Datasets for Test
 func (m *TestItemRecalculateRequestBuilder) Post(ctx context.Context, requestConfiguration *TestItemRecalculateRequestBuilderPostRequestConfiguration)(error) {

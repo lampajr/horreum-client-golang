@@ -9,7 +9,7 @@ import (
 type TestItemRevokeTokenRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTokenId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.test.item.revokeToken.item collection
+// ByTokenId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.test.item.revokeToken.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *TestItemRevokeTokenWithTokenItemRequestBuilder when successful
 func (m *TestItemRevokeTokenRequestBuilder) ByTokenId(tokenId string)(*TestItemRevokeTokenWithTokenItemRequestBuilder) {
@@ -22,7 +22,7 @@ func (m *TestItemRevokeTokenRequestBuilder) ByTokenId(tokenId string)(*TestItemR
     }
     return NewTestItemRevokeTokenWithTokenItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByTokenIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.test.item.revokeToken.item collection
+// ByTokenIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.test.item.revokeToken.item collection
 // returns a *TestItemRevokeTokenWithTokenItemRequestBuilder when successful
 func (m *TestItemRevokeTokenRequestBuilder) ByTokenIdInteger(tokenId int32)(*TestItemRevokeTokenWithTokenItemRequestBuilder) {
     urlTplParams := make(map[string]string)

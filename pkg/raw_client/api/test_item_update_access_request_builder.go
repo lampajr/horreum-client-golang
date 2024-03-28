@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // TestItemUpdateAccessRequestBuilder builds and executes requests for operations under \api\test\{id}\updateAccess
@@ -16,7 +16,7 @@ type TestItemUpdateAccessRequestBuilderPostQueryParameters struct {
     // Deprecated: This property is deprecated, use AccessAsAccess instead
     Access *string `uriparametername:"access"`
     // New Access level for the Test
-    AccessAsAccess *i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Access `uriparametername:"access"`
+    AccessAsAccess *i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Access `uriparametername:"access"`
     // Name of the new owner
     Owner *string `uriparametername:"owner"`
 }
