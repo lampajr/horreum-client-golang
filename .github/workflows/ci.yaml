@@ -1,0 +1,35 @@
+# This workflow will run the full CI for the Horreum Go library including the build and the tests execution
+# This is going to be triggered on every pull request as well as on main and stables branches.
+name: Golang client ci
+
+on:
+  push:
+    branches:
+      - main
+      - 0.12.x
+  pull_request:
+
+jobs:
+  test:
+    name: test/${{ matrix.go }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        go: [ "1.20", "1.21", "1.22" ]
+    env:
+      FORCE_COLOR: "1"
+      PRE_COMMIT_COLOR: "always"
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Setup Go ${{ matrix.go }}
+        uses: actions/setup-go@v5
+        with:
+          go-version: ${{ matrix.go }}
+      - name: Clean
+        run: make clean
+      - name: Build
+        run: make build
+      - name: Test
+        run: make test
