@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // TestImportRequestBuilder builds and executes requests for operations under \api\test\import
@@ -31,7 +31,7 @@ func NewTestImportRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263
     return NewTestImportRequestBuilderInternal(urlParams, requestAdapter)
 }
 // Post import a previously exported Test either as a new Test or to update an existing Test
-func (m *TestImportRequestBuilder) Post(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.TestExportable, requestConfiguration *TestImportRequestBuilderPostRequestConfiguration)(error) {
+func (m *TestImportRequestBuilder) Post(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.TestExportable, requestConfiguration *TestImportRequestBuilderPostRequestConfiguration)(error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return err
@@ -44,7 +44,7 @@ func (m *TestImportRequestBuilder) Post(ctx context.Context, body i474b066f9576d
 }
 // ToPostRequestInformation import a previously exported Test either as a new Test or to update an existing Test
 // returns a *RequestInformation when successful
-func (m *TestImportRequestBuilder) ToPostRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.TestExportable, requestConfiguration *TestImportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *TestImportRequestBuilder) ToPostRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.TestExportable, requestConfiguration *TestImportRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

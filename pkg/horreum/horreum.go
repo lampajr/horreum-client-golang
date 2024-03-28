@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/hyperfoil/horreum/pkg/raw_client"
+	"github.com/hyperfoil/horreum-client-golang/pkg/raw_client"
 	"github.com/microsoft/kiota-abstractions-go/authentication"
 	http "github.com/microsoft/kiota-http-go"
 

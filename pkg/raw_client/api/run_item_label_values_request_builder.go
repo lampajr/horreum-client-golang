@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // RunItemLabelValuesRequestBuilder builds and executes requests for operations under \api\run\{id}\labelValues
@@ -51,19 +51,19 @@ func NewRunItemLabelValuesRequestBuilder(rawUrl string, requestAdapter i2ae4187f
 }
 // Get get all the label values for the run
 // returns a []ExportedLabelValuesable when successful
-func (m *RunItemLabelValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *RunItemLabelValuesRequestBuilderGetRequestConfiguration)([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExportedLabelValuesable, error) {
+func (m *RunItemLabelValuesRequestBuilder) Get(ctx context.Context, requestConfiguration *RunItemLabelValuesRequestBuilderGetRequestConfiguration)([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExportedLabelValuesable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateExportedLabelValuesFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.SendCollection(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateExportedLabelValuesFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
-    val := make([]i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExportedLabelValuesable, len(res))
+    val := make([]i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExportedLabelValuesable, len(res))
     for i, v := range res {
         if v != nil {
-            val[i] = v.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.ExportedLabelValuesable)
+            val[i] = v.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.ExportedLabelValuesable)
         }
     }
     return val, nil

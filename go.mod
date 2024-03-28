@@ -1,4 +1,4 @@
-module github.com/hyperfoil/horreum
+module github.com/hyperfoil/horreum-client-golang
 
 go 1.21
 

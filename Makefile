@@ -90,7 +90,7 @@ ${OPENAPI_SPEC}:
 generate-client: tools ## Generate kiota Horreum client
 	@{\
 		set -e ;\
-		${KIOTA} generate -l go -c HorreumRawClient -n github.com/hyperfoil/horreum/pkg/raw_client -d ${OPENAPI_PATH}/openapi.yaml -o ${GENERATED_CLIENT_PATH} ;\
+		${KIOTA} generate -l go -c HorreumRawClient -n github.com/hyperfoil/horreum-client-golang/pkg/raw_client -d ${OPENAPI_PATH}/openapi.yaml -o ${GENERATED_CLIENT_PATH} ;\
 		${PROJECT_PATH}/patches/patch_generated_code.sh ;\
 	}
 

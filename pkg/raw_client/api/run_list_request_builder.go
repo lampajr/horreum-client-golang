@@ -4,7 +4,7 @@ import (
     "context"
     i53ac87e8cb3cc9276228f74d38694a208cacb99bb8ceb705eeae99fb88d4d274 "strconv"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // RunListRequestBuilder builds and executes requests for operations under \api\run\list
@@ -17,7 +17,7 @@ type RunListRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use DirectionAsSortDirection instead
     Direction *string `uriparametername:"direction"`
     // Sort direction
-    DirectionAsSortDirection *i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.SortDirection `uriparametername:"direction"`
+    DirectionAsSortDirection *i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.SortDirection `uriparametername:"direction"`
     // limit the number of results
     Limit *int32 `uriparametername:"limit"`
     // match all Runs?
@@ -42,7 +42,7 @@ type RunListRequestBuilderGetRequestConfiguration struct {
     // Request query parameters
     QueryParameters *RunListRequestBuilderGetQueryParameters
 }
-// ByTestId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.run.list.item collection
+// ByTestId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.run.list.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *RunListWithTestItemRequestBuilder when successful
 func (m *RunListRequestBuilder) ByTestId(testId string)(*RunListWithTestItemRequestBuilder) {
@@ -55,7 +55,7 @@ func (m *RunListRequestBuilder) ByTestId(testId string)(*RunListWithTestItemRequ
     }
     return NewRunListWithTestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByTestIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.run.list.item collection
+// ByTestIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.run.list.item collection
 // returns a *RunListWithTestItemRequestBuilder when successful
 func (m *RunListRequestBuilder) ByTestIdInteger(testId int32)(*RunListWithTestItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -80,19 +80,19 @@ func NewRunListRequestBuilder(rawUrl string, requestAdapter i2ae4187f7daee263371
 }
 // Get retrieve a paginated list of Runs with available count
 // returns a RunsSummaryable when successful
-func (m *RunListRequestBuilder) Get(ctx context.Context, requestConfiguration *RunListRequestBuilderGetRequestConfiguration)(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RunsSummaryable, error) {
+func (m *RunListRequestBuilder) Get(ctx context.Context, requestConfiguration *RunListRequestBuilderGetRequestConfiguration)(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RunsSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateRunsSummaryFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateRunsSummaryFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RunsSummaryable), nil
+    return res.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RunsSummaryable), nil
 }
 // ToGetRequestInformation retrieve a paginated list of Runs with available count
 // returns a *RequestInformation when successful

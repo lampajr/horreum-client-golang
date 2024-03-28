@@ -9,7 +9,7 @@ import (
 type DatasetRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByDatasetIdId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.dataset.item collection
+// ByDatasetIdId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.dataset.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *DatasetDatasetIdItemRequestBuilder when successful
 func (m *DatasetRequestBuilder) ByDatasetIdId(datasetIdId string)(*DatasetDatasetIdItemRequestBuilder) {
@@ -22,7 +22,7 @@ func (m *DatasetRequestBuilder) ByDatasetIdId(datasetIdId string)(*DatasetDatase
     }
     return NewDatasetDatasetIdItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByDatasetIdIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.dataset.item collection
+// ByDatasetIdIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.dataset.item collection
 // returns a *DatasetDatasetIdItemRequestBuilder when successful
 func (m *DatasetRequestBuilder) ByDatasetIdIdInteger(datasetIdId int32)(*DatasetDatasetIdItemRequestBuilder) {
     urlTplParams := make(map[string]string)

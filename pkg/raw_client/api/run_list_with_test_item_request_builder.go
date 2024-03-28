@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // RunListWithTestItemRequestBuilder builds and executes requests for operations under \api\run\list\{testId}
@@ -16,7 +16,7 @@ type RunListWithTestItemRequestBuilderGetQueryParameters struct {
     // Deprecated: This property is deprecated, use DirectionAsSortDirection instead
     Direction *string `uriparametername:"direction"`
     // Sort direction
-    DirectionAsSortDirection *i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.SortDirection `uriparametername:"direction"`
+    DirectionAsSortDirection *i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.SortDirection `uriparametername:"direction"`
     // limit the number of results
     Limit *int32 `uriparametername:"limit"`
     // filter by page number of a paginated list of Tests
@@ -50,19 +50,19 @@ func NewRunListWithTestItemRequestBuilder(rawUrl string, requestAdapter i2ae4187
 }
 // Get retrieve a paginated list of Runs with available count for a given Test ID
 // returns a RunsSummaryable when successful
-func (m *RunListWithTestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RunListWithTestItemRequestBuilderGetRequestConfiguration)(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RunsSummaryable, error) {
+func (m *RunListWithTestItemRequestBuilder) Get(ctx context.Context, requestConfiguration *RunListWithTestItemRequestBuilderGetRequestConfiguration)(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RunsSummaryable, error) {
     requestInfo, err := m.ToGetRequestInformation(ctx, requestConfiguration);
     if err != nil {
         return nil, err
     }
-    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.CreateRunsSummaryFromDiscriminatorValue, nil)
+    res, err := m.BaseRequestBuilder.RequestAdapter.Send(ctx, requestInfo, i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.CreateRunsSummaryFromDiscriminatorValue, nil)
     if err != nil {
         return nil, err
     }
     if res == nil {
         return nil, nil
     }
-    return res.(i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.RunsSummaryable), nil
+    return res.(i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.RunsSummaryable), nil
 }
 // ToGetRequestInformation retrieve a paginated list of Runs with available count for a given Test ID
 // returns a *RequestInformation when successful

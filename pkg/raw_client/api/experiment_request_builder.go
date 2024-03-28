@@ -9,7 +9,7 @@ import (
 type ExperimentRequestBuilder struct {
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.BaseRequestBuilder
 }
-// ByTestId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.experiment.item collection
+// ByTestId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.experiment.item collection
 // Deprecated: This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.
 // returns a *ExperimentWithTestItemRequestBuilder when successful
 func (m *ExperimentRequestBuilder) ByTestId(testId string)(*ExperimentWithTestItemRequestBuilder) {
@@ -22,7 +22,7 @@ func (m *ExperimentRequestBuilder) ByTestId(testId string)(*ExperimentWithTestIt
     }
     return NewExperimentWithTestItemRequestBuilderInternal(urlTplParams, m.BaseRequestBuilder.RequestAdapter)
 }
-// ByTestIdInteger gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.experiment.item collection
+// ByTestIdInteger gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.experiment.item collection
 // returns a *ExperimentWithTestItemRequestBuilder when successful
 func (m *ExperimentRequestBuilder) ByTestIdInteger(testId int32)(*ExperimentWithTestItemRequestBuilder) {
     urlTplParams := make(map[string]string)

@@ -3,7 +3,7 @@ package api
 import (
     "context"
     i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f "github.com/microsoft/kiota-abstractions-go"
-    i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b "github.com/hyperfoil/horreum/pkg/raw_client/models"
+    i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1 "github.com/hyperfoil/horreum-client-golang/pkg/raw_client/models"
 )
 
 // ConfigDatastoreRequestBuilder builds and executes requests for operations under \api\config\datastore
@@ -24,7 +24,7 @@ type ConfigDatastoreRequestBuilderPutRequestConfiguration struct {
     // Request options
     Options []i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestOption
 }
-// ByIdId gets an item from the github.com/hyperfoil/horreum/pkg/raw_client.api.config.datastore.item collection
+// ByIdId gets an item from the github.com/hyperfoil/horreum-client-golang/pkg/raw_client.api.config.datastore.item collection
 // returns a *ConfigDatastoreIdItemRequestBuilder when successful
 func (m *ConfigDatastoreRequestBuilder) ByIdId(idId string)(*ConfigDatastoreIdItemRequestBuilder) {
     urlTplParams := make(map[string]string)
@@ -51,7 +51,7 @@ func NewConfigDatastoreRequestBuilder(rawUrl string, requestAdapter i2ae4187f7da
 }
 // Post create a new Datastore
 // returns a *int32 when successful
-func (m *ConfigDatastoreRequestBuilder) Post(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPostRequestConfiguration)(*int32, error) {
+func (m *ConfigDatastoreRequestBuilder) Post(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPostRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToPostRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -67,7 +67,7 @@ func (m *ConfigDatastoreRequestBuilder) Post(ctx context.Context, body i474b066f
 }
 // Put update an existing Datastore definition
 // returns a *int32 when successful
-func (m *ConfigDatastoreRequestBuilder) Put(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPutRequestConfiguration)(*int32, error) {
+func (m *ConfigDatastoreRequestBuilder) Put(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPutRequestConfiguration)(*int32, error) {
     requestInfo, err := m.ToPutRequestInformation(ctx, body, requestConfiguration);
     if err != nil {
         return nil, err
@@ -83,7 +83,7 @@ func (m *ConfigDatastoreRequestBuilder) Put(ctx context.Context, body i474b066f9
 }
 // ToPostRequestInformation create a new Datastore
 // returns a *RequestInformation when successful
-func (m *ConfigDatastoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConfigDatastoreRequestBuilder) ToPostRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPostRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.POST, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)
@@ -98,7 +98,7 @@ func (m *ConfigDatastoreRequestBuilder) ToPostRequestInformation(ctx context.Con
 }
 // ToPutRequestInformation update an existing Datastore definition
 // returns a *RequestInformation when successful
-func (m *ConfigDatastoreRequestBuilder) ToPutRequestInformation(ctx context.Context, body i474b066f9576d008d7de8ccd52cbe2ceff5e0826fad92c1bbc3202f77dfa272b.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
+func (m *ConfigDatastoreRequestBuilder) ToPutRequestInformation(ctx context.Context, body i24479a9d05b05b7c1efaeda9ae24aee51c8acc6f59ee3190ae7f0941a410c8a1.Datastoreable, requestConfiguration *ConfigDatastoreRequestBuilderPutRequestConfiguration)(*i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.RequestInformation, error) {
     requestInfo := i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.NewRequestInformationWithMethodAndUrlTemplateAndPathParameters(i2ae4187f7daee263371cb1c977df639813ab50ffa529013b7437480d1ec0158f.PUT, m.BaseRequestBuilder.UrlTemplate, m.BaseRequestBuilder.PathParameters)
     if requestConfiguration != nil {
         requestInfo.Headers.AddAll(requestConfiguration.Headers)

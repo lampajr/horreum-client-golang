@@ -1,4 +1,4 @@
-name: Pull Request Backporting using Git Backporting
+name: Pull Request Backporting
 
 on:
   pull_request_target:
